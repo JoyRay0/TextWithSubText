@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    >
+
+    <com.rk_sofwares.textwithsubtext.TextWithSubText
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mainText="Hello"
+        app:mainTextColor="#000"
+        app:mainTextSize="20sp"
+        app:mainTextStyle="bold"
+        app:subText="world"
+        app:subTextSize="16sp"
+        app:subTextStyle="bold"
+        app:drawableEnd="@drawable/ic_forward_"
+        android:background="#03A9F4"
+        android:layout_margin="10dp"
+        android:paddingStart="0dp"
+        android:paddingEnd="10dp"
+        />
+
+
+</LinearLayout>

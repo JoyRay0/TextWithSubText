@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="TextWithSubText">
+
+        <attr name="mainText" format="string"/>
+        <attr name="mainTextSize" format="dimension"/>
+        <attr name="mainTextColor" format="color"/>
+        <attr name="mainTextStyle" format="enum">
+
+            <enum name="normal" value="0"/>
+            <enum name="italic" value="1"/>
+            <enum name="bold" value="2"/>
+
+        </attr>
+
+
+        <attr name="subText" format="string"/>
+        <attr name="subTextSize" format="dimension"/>
+        <attr name="subTextColor" format="color"/>
+        <attr name="subTextStyle" format="enum">
+
+            <enum name="normal" value="0"/>
+            <enum name="italic" value="1"/>
+            <enum name="bold" value="2"/>
+
+        </attr>
+
+        <attr name="drawableEnd" format="reference"/>
+        <attr name="drawablePadding" format="dimension"/>
+
+    </declare-styleable>
+
+</resources>
