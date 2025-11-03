@@ -7,23 +7,26 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
+import androidx.core.graphics.toColorInt
 
-class TextWithSubText(context: Context, attrs : AttributeSet?) : LinearLayout(context, attrs) {
+class TextWithSubText(context: Context, attrs : AttributeSet?) : RelativeLayout(context, attrs) {
 
-    private var main : AppCompatTextView
-    private var sub : AppCompatTextView
-    private var iv_image : AppCompatImageView
+    private var mText : AppCompatTextView
+    private var sText : AppCompatTextView
+    private var ivEnd : AppCompatImageView
+    private var ivStart : AppCompatImageView
 
     init {
 
-        orientation = VERTICAL
         LayoutInflater.from(context).inflate(R.layout.lay_main_sub_text, this, true)
 
-        main = findViewById(R.id.tv_main)
-        sub = findViewById(R.id.tv_sub)
-        iv_image = findViewById(R.id.iv_end)
+        mText = findViewById(R.id.tv_main)
+        sText = findViewById(R.id.tv_sub)
+        ivEnd = findViewById(R.id.iv_end)
+        ivStart = findViewById(R.id.iv_start)
 
         val attributes = context.obtainStyledAttributes(attrs, R.styleable.TextWithSubText)
 
@@ -37,28 +40,17 @@ class TextWithSubText(context: Context, attrs : AttributeSet?) : LinearLayout(co
         val subTextColor = attributes.getColor(R.styleable.TextWithSubText_subTextColor, Color.parseColor("#807575"))
         val subTextStyle = attributes.getInt(R.styleable.TextWithSubText_subTextStyle, 0)
 
+        val drawableStart = attributes.getResourceId(R.styleable.TextWithSubText_drawableStart, 0)
         val drawableEnd = attributes.getResourceId(R.styleable.TextWithSubText_drawableEnd, 0)
-        val drawablePadding = attributes.getDimensionPixelSize(R.styleable.TextWithSubText_drawablePadding, 2)
+        val drawablePadding = attributes.getDimensionPixelSize(R.styleable.TextWithSubText_drawablePadding, 0)
 
         attributes.recycle()
 
-        main.text = mainText
-        main.textSize = mainTextSize / resources.displayMetrics.density
-        main.setTextColor(mainTextColor)
+        mText.text = mainText
+        mText.textSize = mainTextSize
+        mText.setTextColor(mainTextColor)
 
-        main.setTypeface(null, when(mainTextStyle) {
-
-            1 -> Typeface.ITALIC
-            2-> Typeface.BOLD
-            else -> Typeface.NORMAL
-
-        })
-
-        sub.text = subText
-        sub.textSize = subTextSize / resources.displayMetrics.density
-        sub.setTextColor(subTextColor)
-
-        sub.setTypeface(null, when(subTextStyle) {
+        mText.setTypeface(null, when(mainTextStyle) {
 
             1 -> Typeface.ITALIC
             2-> Typeface.BOLD
@@ -66,13 +58,103 @@ class TextWithSubText(context: Context, attrs : AttributeSet?) : LinearLayout(co
 
         })
 
-        if (drawableEnd != 0){
+        sText.text = subText
+        sText.textSize = subTextSize
+        sText.setTextColor(subTextColor)
 
-            iv_image.setImageResource(drawableEnd)
-            iv_image.visibility = View.VISIBLE
-            iv_image.setPadding(drawablePadding, drawablePadding, drawablePadding, drawablePadding)
+        sText.setTypeface(null, when(subTextStyle) {
+
+            1 -> Typeface.ITALIC
+            2-> Typeface.BOLD
+            else -> Typeface.NORMAL
+
+        })
+
+        image(drawableStart, ivStart, drawablePadding.toInt())
+        image(drawableEnd, ivEnd, drawablePadding.toInt())
+
+        drawablePaddings(drawablePadding, mText, sText, drawableStart, 0)
+        drawablePaddings(drawablePadding, mText, sText, 0, drawableEnd)
+
+    }
+
+    fun setMainText(text : String){
+
+        mText.text = text
+
+    }
+
+    fun setMainTextSize(textSize : Int){
+
+        mText.textSize = textSize.toFloat()
+
+    }
+
+    fun setMainTextColor(colorString : String ){
+
+        try {
+
+            mText.setTextColor(colorString.toColorInt())
+
+        }catch (e : Exception){
+
+            e.printStackTrace()
+
         }
 
+    }
+
+    fun setSubText(text : String){
+
+        sText.text = text
+
+    }
+
+    fun setSubTextSize(textSize : Int){
+
+        sText.textSize = textSize.toFloat()
+
+    }
+
+    fun setSubTextColor(colorString : String){
+
+        try {
+
+            sText.setTextColor(colorString.toColorInt())
+
+        }catch (e : Exception){
+
+            e.printStackTrace()
+
+        }
+
+    }
+
+    private fun image(drawable : Int, image : AppCompatImageView, padding : Int){
+
+        if (drawable != 0){
+
+            image.setImageResource(drawable)
+            image.visibility = View.VISIBLE
+
+        }else{
+
+            image.visibility = View.GONE
+
+        }
+
+    }
+
+    private fun drawablePaddings(padding : Int, mText : AppCompatTextView, sText : AppCompatTextView, iv_start : Int, iv_end : Int){
+
+        val left = if (iv_start != 0) padding else mText.paddingLeft
+        val right = if (iv_end != 0) padding else mText.paddingRight
+        val top = mText.paddingTop
+        val bottom = mText.paddingBottom
+
+        mText.setPadding(left, top, right, bottom)
+
+        sText.setPadding(left, top, right, bottom)
 
     }
 

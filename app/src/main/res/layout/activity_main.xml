@@ -15,18 +15,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:mainText="Hello"
-        app:mainTextColor="#000"
-        app:mainTextSize="20sp"
         app:mainTextStyle="bold"
-        app:subText="world"
-        app:subTextSize="16sp"
+        app:subText="World"
         app:subTextStyle="bold"
+        app:drawableStart="@drawable/ic_android"
         app:drawableEnd="@drawable/ic_forward_"
-        android:background="#03A9F4"
-        android:layout_margin="10dp"
-        android:paddingStart="0dp"
-        android:paddingEnd="10dp"
+        app:drawablePadding="10dp"
         />
+
+
 
 
 </LinearLayout>

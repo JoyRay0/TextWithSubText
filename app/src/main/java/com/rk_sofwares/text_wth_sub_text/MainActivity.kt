@@ -21,5 +21,12 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        text.setMainText("World")
+        text.setSubText("Hello")
+        text.setMainTextColor("#000000")
+        text.setSubTextColor("#000000")
+        text.setMainTextSize(30)
+        text.setSubTextSize(20)
+
     }
 }
