@@ -1,6 +1,6 @@
 # 🌟 Welcome to TextWithSubText Library
 
-[![](https://jitpack.io/v/JoyRay0/TextWithSubText.svg)](https://jitpack.io/#JoyRay0/TextWithSubText) 
+[![](https://jitpack.io/v/JoyRay0/TextWithSubText.svg)](https://jitpack.io/#JoyRay0/TextWithSubText)
 
 ### 🧩 A lightweight and customizable Android library for displaying a main title with a subtext — perfect for lists, settings screens, or profile sections.
 ### It supports custom text styles, colors, and drawables (start & end) with flexible padding, making your UI cleaner and more elegant.  
@@ -51,7 +51,7 @@ implementation 'com.github.JoyRay0:TextWithSubText:$release Version'
 ### 🧱 XML Example
 
 ```
-<com.rk_sofwares.textwithsubtext.TextWithSubText
+<com.rk_softwares.textwithsubtext.TextWithSubText
     android:id="@+id/text"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -76,33 +76,37 @@ java
 
 TextWithSubText text = findViewById(R.id.text);
 
-text.setMainText("World");
-text.setSubText("Hello");
-text.setMainTextColor("#000000");
-text.setSubTextColor("#000000");
-text.setMainTextSize(30);
-text.setSubTextSize(20);
+text.setMainText("Hello")
+text.setSubText("World")
+text.setMainTextColor("#000000")
+text.setSubTextColor("#000000")
+text.setMainTextSize(30)
+text.setSubTextSize(20)
+text.setMainTextStyle(Typeface.BOLD)
+text.setSubTextStyle(Typeface.NORMAL)
 ```
  
-### Customize your text in Kotlin Code
+### Customize in Kotlin
 ```
 kotlin
 
 
 val text: TextWithSubText = findViewById(R.id.text)
 
-text.setMainText("World")
-text.setSubText("Hello")
+text.setMainText("Hello")
+text.setSubText("World")
 text.setMainTextColor("#000000")
 text.setSubTextColor("#000000")
 text.setMainTextSize(30)
 text.setSubTextSize(20)
+text.setMainTextStyle(Typeface.BOLD)
+text.setSubTextStyle(Typeface.NORMAL)
 ```
  
 ### 💖 Special Thanks
 
-I would like to express my heartfelt thanks to everyone who uses or contributes to TextWithSubText.
-Your support, feedback, and contributions inspire me to make this library even better.
+__I would like to express my heartfelt thanks to everyone who uses or contributes to TextWithSubText.
+Your support, feedback, and contributions inspire me to make this library even better.__
 
 _Every suggestion, bug report, and pull request helps this project grow stronger.
 Together, we’re building something simple, elegant, and useful for the Android community._
