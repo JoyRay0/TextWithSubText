@@ -95,7 +95,7 @@ text.setMainTextStyle(Typeface.BOLD)
 text.setSubTextStyle(Typeface.NORMAL)
 ```
  
-### Customize in Kotlin
+### 🧠 Customize in Kotlin
 ```
 kotlin
 
