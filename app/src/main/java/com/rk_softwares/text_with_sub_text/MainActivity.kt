@@ -1,12 +1,10 @@
-package com.rk_sofwares.text_wth_sub_text
+package com.rk_softwares.text_with_sub_text
 
+import android.graphics.Typeface
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.rk_sofwares.textwithsubtext.TextWithSubText
+import com.rk_softwares.textwithsubtext.TextWithSubText
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,12 +19,15 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        text.setMainText("World")
-        text.setSubText("Hello")
+        text.setMainText("Hello")
+        text.setSubText("World")
         text.setMainTextColor("#000000")
+        text.setMainTextStyle(Typeface.BOLD)
         text.setSubTextColor("#000000")
         text.setMainTextSize(30)
         text.setSubTextSize(20)
+        text.setSubTextStyle(Typeface.NORMAL)
+
 
     }
 }

@@ -1,4 +1,4 @@
-package com.rk_sofwares.textwithsubtext
+package com.rk_softwares.textwithsubtext
 
 import android.content.Context
 import android.graphics.Color
@@ -6,7 +6,6 @@ import android.graphics.Typeface
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
@@ -70,8 +69,8 @@ class TextWithSubText(context: Context, attrs : AttributeSet?) : RelativeLayout(
 
         })
 
-        image(drawableStart, ivStart, drawablePadding.toInt())
-        image(drawableEnd, ivEnd, drawablePadding.toInt())
+        image(drawableStart, ivStart)
+        image(drawableEnd, ivEnd)
 
         drawablePaddings(drawablePadding, mText, sText, drawableStart, 0)
         drawablePaddings(drawablePadding, mText, sText, 0, drawableEnd)
@@ -104,6 +103,12 @@ class TextWithSubText(context: Context, attrs : AttributeSet?) : RelativeLayout(
 
     }
 
+    fun setMainTextStyle(style : Int){
+
+        mText.setTypeface(null, style)
+
+    }
+
     fun setSubText(text : String){
 
         sText.text = text
@@ -130,7 +135,13 @@ class TextWithSubText(context: Context, attrs : AttributeSet?) : RelativeLayout(
 
     }
 
-    private fun image(drawable : Int, image : AppCompatImageView, padding : Int){
+    fun setSubTextStyle(style: Int){
+
+        sText.setTypeface(null, style)
+
+    }
+
+    private fun image(drawable : Int, image : AppCompatImageView){
 
         if (drawable != 0){
 

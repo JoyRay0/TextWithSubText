@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.rk_sofwares.textwithsubtext"
+    namespace = "com.rk_softwares.textwithsubtext"
     compileSdk {
         version = release(36)
     }

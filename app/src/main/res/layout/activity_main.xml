@@ -10,13 +10,17 @@
     android:orientation="vertical"
     >
 
-    <com.rk_sofwares.textwithsubtext.TextWithSubText
+    <com.rk_softwares.textwithsubtext.TextWithSubText
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:mainText="Hello"
+        app:mainTextSize="14sp"
+        app:mainTextColor="#000"
         app:mainTextStyle="bold"
         app:subText="World"
+        app:subTextSize="12sp"
+        app:subTextColor="#625959"
         app:subTextStyle="bold"
         app:drawableStart="@drawable/ic_android"
         app:drawableEnd="@drawable/ic_forward_"

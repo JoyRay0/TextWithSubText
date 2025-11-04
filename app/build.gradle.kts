@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    namespace = "com.rk_sofwares.text_wth_sub_text"
+    namespace = "com.rk_softwares.text_with_sub_text"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "com.rk_sofwares.text_wth_sub_text"
+        applicationId = "com.rk_softwares.text_with_sub_text"
         minSdk = 22
         targetSdk = 36
         versionCode = 1

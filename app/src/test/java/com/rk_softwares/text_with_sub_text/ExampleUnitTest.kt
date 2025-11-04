@@ -1,4 +1,4 @@
-package com.rk_sofwares.textwithsubtext
+package com.rk_softwares.text_with_sub_text
 
 import org.junit.Test
 
