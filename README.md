@@ -9,7 +9,7 @@
 ## ✨ Preview  
 
 <p align="start">
-  <img src="preview.png" height="300" alt="Preview" />
+  <img src="preview.png" height="600" alt="Preview" />
 </p>
 
 
