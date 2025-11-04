@@ -5,9 +5,14 @@
 ### 🧩 A lightweight and customizable Android library for displaying a main title with a subtext — perfect for lists, settings screens, or profile sections.
 ### It supports custom text styles, colors, and drawables (start & end) with flexible padding, making your UI cleaner and more elegant.  
 
+
 ## ✨ Preview  
 
-![Preview](preview.png)
+<p align="start">
+  <img src="preview.png" height="300" alt="Preview" />
+</p>
+
+
 
 ## 🚀 How to Use
 
