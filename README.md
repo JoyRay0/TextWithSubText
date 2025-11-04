@@ -37,7 +37,7 @@ dependencyResolutionManagement {
 
 ### In your `app/build.gradle` file, add:
 
-__Groovy__
+__Groovy DSL__
 
 ``` 
 implementation 'com.github.JoyRay0:TextWithSubText:$release Version'
