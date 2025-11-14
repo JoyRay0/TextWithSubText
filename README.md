@@ -93,6 +93,9 @@ text.setMainTextSize(30)
 text.setSubTextSize(20)
 text.setMainTextStyle(Typeface.BOLD)
 text.setSubTextStyle(Typeface.NORMAL)
+text.drawableStart(R.drawable.ic_android)
+text.drawableEnd(R.drawable.ic_forward_)
+text.drawablePadding(10)
 ```
  
 ### 🧠 Customize in Kotlin
@@ -110,6 +113,9 @@ text.setMainTextSize(30)
 text.setSubTextSize(20)
 text.setMainTextStyle(Typeface.BOLD)
 text.setSubTextStyle(Typeface.NORMAL)
+text.drawableStart(R.drawable.ic_android)
+text.drawableEnd(R.drawable.ic_forward_)
+text.drawablePadding(10)
 ```
  
 ### 💖 Special Thanks
