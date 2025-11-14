@@ -75,20 +75,23 @@ class TextWithSubText(context: Context, attrs : AttributeSet?) : RelativeLayout(
         drawablePaddings(drawablePadding, mText, sText, drawableStart, 0)
         drawablePaddings(drawablePadding, mText, sText, 0, drawableEnd)
 
-    }
+    } // init end==============================================================
 
+    //For Java or Kotlin
     fun setMainText(text : String){
 
         mText.text = text
 
     }
 
+    //For Java or Kotlin
     fun setMainTextSize(textSize : Int){
 
         mText.textSize = textSize.toFloat()
 
     }
 
+    //For Java or Kotlin
     fun setMainTextColor(colorString : String ){
 
         try {
@@ -103,24 +106,28 @@ class TextWithSubText(context: Context, attrs : AttributeSet?) : RelativeLayout(
 
     }
 
+    //For Java or Kotlin
     fun setMainTextStyle(style : Int){
 
         mText.setTypeface(null, style)
 
     }
 
+    //For Java or Kotlin
     fun setSubText(text : String){
 
         sText.text = text
 
     }
 
+    //For Java or Kotlin
     fun setSubTextSize(textSize : Int){
 
         sText.textSize = textSize.toFloat()
 
     }
 
+    //For Java or Kotlin
     fun setSubTextColor(colorString : String){
 
         try {
@@ -135,12 +142,68 @@ class TextWithSubText(context: Context, attrs : AttributeSet?) : RelativeLayout(
 
     }
 
+    //For Java or Kotlin
     fun setSubTextStyle(style: Int){
 
         sText.setTypeface(null, style)
 
     }
 
+    //For Java or Kotlin
+    fun drawableStart(drawable: Int = 0){
+
+        if (drawable != 0){
+
+            ivStart.visibility = View.VISIBLE
+            ivStart.setImageResource(drawable)
+            drawablePadding(0)
+
+        }else{
+
+            ivStart.visibility = View.GONE
+
+        }
+
+    }
+
+    //For Java or Kotlin
+    fun drawableEnd(drawable: Int = 0){
+
+        if (drawable != 0){
+
+            ivEnd.visibility = View.VISIBLE
+            ivEnd.setImageResource(drawable)
+            drawablePadding(0)
+
+        }else{
+
+            ivEnd.visibility = View.GONE
+
+        }
+
+    }
+
+    //For XML or Java or Kotlin
+    fun drawablePadding(padding: Int, textView: AppCompatTextView ? = null){
+
+        val start = ivStart.drawable != null
+        val end = ivEnd.drawable != null
+
+        val defaultLeft = textView?.paddingLeft ?: 0
+        val defaultRight = textView?.paddingRight ?: 0
+        val top = textView?.paddingTop ?: 0
+        val bottom = textView?.paddingBottom ?: 0
+
+        val left = if (start) padding else defaultLeft
+        val right = if (end) padding else defaultRight
+
+        mText.setPadding(left, top, right, bottom)
+
+        sText.setPadding(left, top, right, bottom)
+
+    }
+
+    //For XML
     private fun image(drawable : Int, image : AppCompatImageView){
 
         if (drawable != 0){
@@ -156,6 +219,7 @@ class TextWithSubText(context: Context, attrs : AttributeSet?) : RelativeLayout(
 
     }
 
+    //For XML
     private fun drawablePaddings(padding : Int, mText : AppCompatTextView, sText : AppCompatTextView, iv_start : Int, iv_end : Int){
 
         val left = if (iv_start != 0) padding else mText.paddingLeft
@@ -169,4 +233,4 @@ class TextWithSubText(context: Context, attrs : AttributeSet?) : RelativeLayout(
 
     }
 
-}
+}// class end======================================================================

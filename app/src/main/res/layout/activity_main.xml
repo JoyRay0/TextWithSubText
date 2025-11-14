@@ -24,7 +24,6 @@
         app:subTextStyle="bold"
         app:drawableStart="@drawable/ic_android"
         app:drawableEnd="@drawable/ic_forward_"
-        app:drawablePadding="10dp"
         />
 
 
